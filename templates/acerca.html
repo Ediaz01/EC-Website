@@ -1,0 +1,159 @@
+{% include "header.html" %}
+
+<body>
+  {% include "navbar.html" %}
+
+  <section
+    class="hero-cover"
+    style="background-image: url(../static/images/about-cover-2.jpg)"
+  >
+    <div class="container">
+      <div class="hero-cover-content">
+        <h1>
+          Somos un equipo de profesionales en contabilidad y finanzas basados en
+          Cancún, México.
+        </h1>
+        <p>
+          Impulsando decisiones financieras clave para lograr tus objetivos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por que elegirnos start -->
+  <div class="container">
+    <div class="container-2-row-xl">
+      <div class="grid-col-left">
+        <img src="./static/images/why-us-img.jpg" alt="logo" />
+      </div>
+
+      <div class="grid-col-right">
+        <h2>¿Por qué elegirnos?</h2>
+        <ul class="custom-servs-list">
+          <li>
+            <span class="bullet-title">Experiencia:</span> Más de 15 años de
+            experiencia profesional nos permiten ofrecer un servicio de alta
+            calidad y actualizado.
+          </li>
+          <li>
+            <span class="bullet-title">Equipo experto: </span> Asegurando que tu
+            negocio reciba asesoría precisa y adaptada a tus necesidades
+            específicas.
+          </li>
+          <li>
+            <span class="bullet-title">Servicio al cliente:</span> Nos
+            destacamos por un servicio al cliente personalizado y atento.
+          </li>
+          <li>
+            <span class="bullet-title">Tecnología:</span> Utilizamos las
+            herramientas más avanzados para poder ofrecer servicios eficientes,
+            precisos y de fácil acceso para nuestros clientes.
+          </li>
+          <li>
+            <span class="bullet-title">Enfoque global:</span> Tomamos un enfoque
+            integral y estratégico de tu empresa, para ayudarte a tomar las
+            decisiones más acertadas.
+          </li>
+        </ul>
+        <a href="{{ url_for('contacto') }}">
+          <p>Agenda una consulta gratis >></p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Por que elegirnos end -->
+
+  <!-- Servicios 3 x 2, 6 items start -->
+  <div class="container">
+    <div class="services-title">
+      <h2>NUESTROS SERVICIOS</h2>
+      <p>Conoce algunos de nuestros servicios principales.</p>
+    </div>
+    <div class="grid-6-servs">
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-chart-pie fa-3x"></i>
+        <h2>Análisis financiero</h2>
+        <p>
+          Realizamos un análisis detallado de la rentabilidad, flujo de efectivo
+          y retorno de inversión de tu empresa, para identificar oportunidades
+          de mejora.
+        </p>
+      </div>
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-table fa-3x"></i>
+        <h2>Proyectos de inversión</h2>
+        <p>
+          Evaluamos detalladamente la viabilidad financiera del proyecto.
+          Análisis de rentabilidad, Valor Presente Neto (VPN), Tasa Interna de
+          Retorno (TIR), y riesgos.
+        </p>
+      </div>
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-address-card fa-3x"></i>
+        <h2>Estados financieros</h2>
+        <p>
+          Nos encargamos de llevar los registros contables y de elaborar los
+          estados financieros conforme a los estándares vigentes.
+        </p>
+      </div>
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-address-card fa-3x"></i>
+        <h2>Contabilidad electrónica</h2>
+        <p>
+          Te ayudamos a cumplir con todos los requerimientos de la autoridad en
+          cuanto a la contabilidad electrónica.
+        </p>
+      </div>
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-address-card fa-3x"></i>
+        <h2>Presentación de impuestos</h2>
+        <p>
+          Nos encargamos de presentar las declaraciones de impuestos federales
+          (anuales, provisionales, informativas).
+        </p>
+      </div>
+      <div class="grid-6-item-servs">
+        <i class="fa-solid fa-address-card fa-3x"></i>
+        <h2>Atención a requerimientos</h2>
+        <p>
+          Gestionamos los oficios emitidos por la autoridad por posibles errores
+          u omisiones en las obligaciones fiscales.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Servicios detallados end -->
+
+  <!-- Results band start -->
+  <div class="row-3-results">
+    <div class="sq-item-results">
+      <h3>15+</h3>
+      <p>Años de experiencia</p>
+    </div>
+    <div class="sq-item-results">
+      <h3>20+</h3>
+      <p>Projectos exitosos</p>
+    </div>
+    <div class="sq-item-results">
+      <h3>5</h3>
+      <p>Sectores diversos</p>
+    </div>
+  </div>
+  <!-- Results band end -->
+
+  <!-- Hero final start -->
+  <div class="container">
+    <div class="hero-ac">
+      <a href=""><img src="../static/images/EC_W.png" alt="" /></a>
+      <h2>Tu aliado estratégico para alcanzar tus objetivos financieros.</h2>
+      <p>Conoce como podemos ayudarte.</p>
+      <a href="{{ url_for('contacto') }}"
+        ><button class="btn btn-primary-orange">Contáctanos</button></a
+      >
+    </div>
+  </div>
+  <!-- Hero final end -->
+
+  <!-- Footer -->
+  {% include "footer.html" %}
+</body>

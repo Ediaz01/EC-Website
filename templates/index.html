@@ -1,0 +1,227 @@
+{% include "header.html" %}
+
+<!--  Header  -->
+<body>
+  {% include "navbar.html" %}
+
+  <section
+    class="hero-cover"
+    style="background-image: url(../static/images/index-cover-d.jpg)"
+  >
+    <div class="container">
+      <div class="hero-cover-content">
+        <h1>Tu aliado estratégico para alcanzar tus objetivos financieros.</h1>
+        <p>
+          Conoce como podemos ayudarte a impulsar el éxito y crecimiento de tu
+          empresa.
+        </p>
+        <div class="btns-div">
+          <a href="{{ url_for('contacto') }}"
+            ><button class="btn btn-rect-orange">CONTÁCTANOS</button></a
+          >
+          <a href="{{ url_for('acerca') }}"
+            ><button class="btn btn-rect-transp">CONOCE MÁS</button></a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Header end -->
+
+  <!--  Hero  -->
+
+  <section>
+    <div class="container">
+      <div class="container-b-line">
+        <div class="hero-index">
+          <a href="{{ url_for('home') }}"
+            ><img src="../static/images/logo_wnb.png" alt=""
+          /></a>
+          <h2>
+            Impulsamos las decisiones financieras óptimas para tu empresa.
+          </h2>
+          <p>
+            Proporcionamos servicios de contabilidad y consultoría financiera
+            especializada para PYMES basadas en Quintana Roo y en todo
+            México.<br />
+            Nuestro objetivo es brindarte mayor libertad para que puedas
+            concentrarte en lo que mas te apasiona de tu negocio.
+          </p>
+          <a href="{{ url_for('contacto') }}"
+            ><button class="btn btn-primary-orange">Contáctanos</button></a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  Hero End -->
+
+  <!-- Servicios  Three Big Cards -->
+  <div class="container">
+    <div class="three-cards-title">
+      <h2>NUESTROS SERVICIOS</h2>
+      <p>Adaptamos cada solución a las necesidades únicas de tu empresa.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row-2-fts">
+      <div class="col-item-fts-1">
+        <i class="fa-solid fa-pen-to-square fa-icon1"></i>
+        <h2>Planeación Financiera</h2>
+        <p>
+          Desarrollamos tu plan financiero adaptado a tus necesidades
+          específicas, para guiarte eficázmente en la toma decisiones.
+        </p>
+        <ul class="custom-servs-list">
+          <li>
+            Proyecciones financieras con los tres estados financieros
+            principales: Estado de Resultados, Balance General, y Estado de
+            Flujo de Caja
+          </li>
+          <li>Análisis de rentabilidad de la empresa</li>
+          <li>Análisis de viabilidad financiera de proyectos de inversión</li>
+          <li>Presupuestos</li>
+          <li>Asesoría para la obtención de financiamiento</li>
+        </ul>
+      </div>
+      <div class="col-item-fts-2">
+        <img src="..//static/images/card-xl1.jpg" alt="" />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row-2-fts">
+      <div class="col-item-fts-1 item-order-2">
+        <i class="fa-solid fa-table fa-icon2"></i>
+        <h2>Contabilidad</h2>
+        <p>
+          Nos encargamos de gestionar tu contabilidad de manera eficiente.
+          Nuestro compromiso es asegurar la precisión y el orden en tus
+          finanzas.
+        </p>
+        <ul class="custom-servs-list">
+          <li>Facturación electrónica</li>
+          <li>Registros contables</li>
+          <li>Conciliaciones bancarias</li>
+          <li>Preparación mensual de estados financieros</li>
+          <li>Contabilidad electrónica</li>
+          <li>Cumplimiento de operaciones vulnerables</li>
+        </ul>
+      </div>
+      <div class="col-item-fts-2 item-order-1">
+        <img src="..//static/images/card-xl2.jpg" alt="" />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row-2-fts">
+      <div class="col-item-fts-1">
+        <i class="fa-solid fa-square-check fa-icon3"></i>
+        <h2>Cumplimiento Fiscal</h2>
+        <p>
+          Te ayudamos a que estés al día con todos los requerimientos fiscales
+          que las leyes establecen.
+        </p>
+        <ul class="custom-servs-list">
+          <li>
+            Gestoría de tramites de permisos y licencias ante autoridades
+            (municipales, estatales y federales)
+          </li>
+          <li>
+            Presentación de impuesto federales (anuales, provisionales,
+            informativas)
+          </li>
+          <li>Devoluciones de impuestos a favor</li>
+          <li>Atención a requerimientos de autoridades</li>
+          <li>Regularización de situación fiscal</li>
+        </ul>
+      </div>
+      <div class="col-item-fts-2">
+        <img src="..//static/images/card-xl3.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Servicios end -->
+
+  <!-- Call to action start -->
+  <div class="row-2-cta">
+    <h3 class="text-lg">Agenda una consulta</h3>
+    <a href="{{ url_for('contacto') }}">
+      <button class="btn btn-secondary">Contáctanos</button>
+    </a>
+  </div>
+  <!-- Call to action end -->
+
+  <!-- Blog three cards/articles start -->
+  <div class="container">
+    <div class="articles-title">
+      <h2>NUESTRO BLOG</h2>
+    </div>
+    <div class="row-3-blog">
+      <div class="container-card">
+        <div class="container-card-img">
+          <a href="{{ url_for('articlea') }}"
+            ><img src="..//static/images/articlea-img.jpg" alt=""
+          /></a>
+        </div>
+        <div class="container-card-text">
+          <h3>La importancia de tener un plan financiero para tu empresa.</h3>
+          <p>
+            En el mundo empresarial, el éxito no solo depende de una idea
+            innovadora o un producto excepcional; la gestión financiera es
+            igualmente crucial.
+          </p>
+          <a href="{{ url_for('articlea') }}" class="continue-read-link"
+            >Seguir leyendo... »</a
+          >
+        </div>
+      </div>
+      <div class="container-card">
+        <div class="container-card-img">
+          <a href="{{ url_for('articleb') }}"
+            ><img src="..//static/images/articleb-img.jpg" alt=""
+          /></a>
+        </div>
+        <div class="container-card-text">
+          <h3>
+            El flujo de efectivo es un vital indicador de salud financiera.
+          </h3>
+          <p>
+            Para las pequeñas empresas, el flujo de caja es mucho más que una
+            simple cifra en un estado financiero; es un vital indicador de salud
+            financiera.
+          </p>
+          <a href="{{ url_for('articleb') }}" class="continue-read-link"
+            >Seguir leyendo... »</a
+          >
+        </div>
+      </div>
+      <div class="container-card">
+        <div class="container-card-img">
+          <a href="{{ url_for('articlec') }}"
+            ><img src="..//static/images/articlec-img.jpg" alt=""
+          /></a>
+        </div>
+        <div class="container-card-text">
+          <h3>Los tres tipos de contabilidad que debes conocer.</h3>
+          <p>
+            Existen tres tipos principales de contabilidad que son esenciales
+            para la operación y el éxito de una empresa. Entender sus
+            diferencias es clave.
+          </p>
+          <a href="{{ url_for('articlec') }}" class="continue-read-link"
+            >Seguir leyendo... »</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog three cards/articles end -->
+
+  <!-- Footer -->
+  {% include "footer.html" %}
+</body>

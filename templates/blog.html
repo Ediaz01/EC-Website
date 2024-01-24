@@ -1,0 +1,104 @@
+{% include "header.html" %}
+
+<body>
+  {% include "navbar.html" %}
+
+  <!--- Blog Cover --->
+  <section
+    class="hero-cover"
+    style="background-image: url(../static/images/blog-cover-4.jpg)"
+  >
+    <div class="container">
+      <div class="hero-cover-content">
+        <h1>Blog</h1>
+        <p>
+          Explora nuestro blog, en donde encontrarás información que puede ser
+          de interés y utilidad para ti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-list-blog">
+    <div class="container-col">
+      <div class="box-md-img">
+        <a href="{{ url_for('articlea') }}"
+          ><img src="..//static/images/articlea-img.jpg" alt=""
+        /></a>
+      </div>
+      <div class="box-md-blog">
+        <p class="blog-tag">FINANZAS</p>
+        <h2>La importancia de tener un plan financiero para tu empresa.</h2>
+        <p>
+          En el mundo empresarial, el éxito no solo depende de una idea
+          innovadora o un producto excepcional; la gestión financiera es
+          igualmente crucial.
+        </p>
+        <a href="{{ url_for('articlea') }}">Seguir leyendo... »</a>
+        <p class="author-sm">Enrique Diaz</p>
+      </div>
+    </div>
+
+    <div class="container-col">
+      <div class="box-md-img">
+        <a href="{{ url_for('articleb') }}"
+          ><img src="..//static/images/articleb-img.jpg" alt=""
+        /></a>
+      </div>
+      <div class="box-md-blog">
+        <p class="blog-tag">FINANZAS</p>
+        <h2>El flujo de efectivo es un vital indicador de salud financiera.</h2>
+        <p>
+          Para las pequeñas empresas, el flujo de caja es mucho más que una
+          simple cifra en un estado financiero; es un vital indicador de salud
+          financiera.
+        </p>
+        <a href="{{ url_for('articleb') }}">Seguir leyendo... »</a>
+        <p class="author-sm">Enrique Diaz</p>
+      </div>
+    </div>
+
+    <div class="container-col">
+      <div class="box-md-img">
+        <a href="{{ url_for('articlec') }}"
+          ><img src="..//static/images/articlec-img.jpg" alt=""
+        /></a>
+      </div>
+      <div class="box-md-blog">
+        <p class="blog-tag">CONTABILIDAD</p>
+        <h2>Los tres tipos de contabilidad que debes conocer.</h2>
+        <p>
+          Existen tres tipos principales de contabilidad que son esenciales para
+          la operación y el éxito de una empresa. Entender sus diferencias es
+          clave.
+        </p>
+        <a href="{{ url_for('articlec') }}">Seguir leyendo... »</a>
+        <p class="author-sm">Enrique Diaz</p>
+      </div>
+    </div>
+
+    <div class="container-col">
+      <div class="box-md-img">
+        <a href="{{ url_for('articled') }}"
+          ><img src="..//static/images/articled-img.jpg" alt=""
+        /></a>
+      </div>
+      <div class="box-md-blog">
+        <p class="blog-tag">ESTRATEGIA</p>
+        <h2>
+          Las PYMEs también necesitan desarrollar una estrategia de negocios.
+        </h2>
+        <p>
+          En el ambiente empresarial altamente competitivo de hoy, el desarrollo
+          de una estrategia sólida es crucial para el éxito de cualquier
+          empresa.
+        </p>
+        <a href="{{ url_for('articled') }}">Seguir leyendo... »</a>
+        <p class="author-sm">Enrique Diaz</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {% include "footer.html" %}
+</body>

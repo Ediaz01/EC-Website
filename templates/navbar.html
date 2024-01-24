@@ -1,0 +1,48 @@
+<header class="header">
+  <!--  Navbar  start -->
+  <nav class="navbar">
+    <div class="logo-rect">
+      <a href="{{ url_for('home') }}" class="navbar-logo">
+        <img src="./static/images/logo_wnb.png" alt="Endorse Capital" />
+      </a>
+      <p>Endorse Capital</p>
+    </div>
+    <div class="main-menu">
+      <ul>
+        <li>
+          <a href="{{ url_for('home') }}">INICIO</a>
+        </li>
+        <li>
+          <a href="{{ url_for('acerca') }}">ACERCA DE</a>
+        </li>
+        <li>
+          <a href="{{ url_for('blog') }}">BLOG</a>
+        </li>
+        <li>
+          <a href="{{ url_for('contacto') }}">CONTACTO</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Hamburguer Button -->
+    <button class="hamburger-button">
+      <i class="fa-solid fa-bars fa-2x"></i>
+    </button>
+    <div class="mobile-menu">
+      <ul>
+        <li>
+          <a href="{{ url_for('home') }}">INICIO</a>
+        </li>
+        <li>
+          <a href="{{ url_for('acerca') }}">ACERCA DE</a>
+        </li>
+        <li>
+          <a href="{{ url_for('blog') }}">BLOG</a>
+        </li>
+        <li>
+          <a href="{{ url_for('contacto') }}">CONTACTO</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--  Navbar  end-->
+</header>

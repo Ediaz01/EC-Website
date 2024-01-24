@@ -1,0 +1,101 @@
+{% include "header.html" %}
+
+<!-- Contact Cover  -->
+<body>
+  {% include "navbar.html" %}
+
+  <section
+    class="hero-cover"
+    style="background-image: url(../static/images/contact-cover-2.jpg)"
+  >
+    <div class="container">
+      <div class="hero-cover-content">
+        <h1>Contáctanos</h1>
+        <p>
+          Completa nuestro formulario para enviarnos un mensaje y te
+          responderemos lo antes posible.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero end -->
+  <!-- Main Content-->
+  <section>
+    <div class="container-wrapper">
+      <div>
+        <form
+          id="contactForm"
+          name="sentMessage"
+          action="{{ url_for('contacto') }}"
+          method="POST"
+          class="form-box"
+        >
+          <div class="container-form">
+            <div class="form-input-item">
+              <input
+                class="input-box"
+                id="firstname"
+                name="firstname"
+                type="text"
+                placeholder="Nombre"
+                required
+              />
+            </div>
+            <div class="form-input-item">
+              <input
+                class="input-box"
+                id="lastname"
+                name="lastname"
+                type="text"
+                placeholder="Apellido"
+                required
+              />
+            </div>
+            <div class="form-input-item">
+              <input
+                class="input-box"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-input-item">
+              <input
+                class="input-box"
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Telefono"
+                required
+              />
+            </div>
+            <div class="message-box-item">
+              <!-- <label for="message" class="label-item">Message</label> -->
+              <textarea
+                class="message-box"
+                id="message"
+                name="message"
+                placeholder="Mensaje"
+                required
+              ></textarea>
+            </div>
+            <div class="btn-item">
+              <button
+                class="btn btn-primary-action"
+                id="submitButton"
+                type="submit"
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  {% include "footer.html" %}
+</body>
