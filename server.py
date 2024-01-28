@@ -1,8 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, flash, request, redirect, url_for
+from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
+from wtforms import StringField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired, Length, Email
+import os
 
 
 app = Flask(__name__)
+
+
+##SECRET KEY 
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_key_for_development')
+
 
 
 ##CREATE DATABASE
@@ -29,6 +38,19 @@ with app.app_context():
 
 
 
+# Define WTForms Form
+# First, you define a WTForms form that corresponds to your Lead model. 
+# This form will be used for input validation and CSRF protection.
+class LeadForm(FlaskForm):
+    firstname = StringField('First Name', validators=[DataRequired(), Length(max=250)], render_kw={"placeholder": "Nombre"})
+    lastname = StringField('Last Name', validators=[DataRequired(), Length(max=250)], render_kw={"placeholder": "Apellido"})
+    email = StringField('Email', validators=[DataRequired(), Email(), Length(max=250)], render_kw={"placeholder": "Email"})
+    phone = StringField('Phone', validators=[DataRequired()], render_kw={"placeholder": "Teléfono"})
+    message = TextAreaField('Message', validators=[DataRequired(), Length(max=500)], render_kw={"placeholder": "Mensaje"})
+    submit = SubmitField('Enviar')
+
+
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -37,19 +59,21 @@ def home():
 
 @app.route("/contacto", methods=["GET", "POST"])
 def contacto():
-    if request.method == "POST":
+    form = LeadForm()
+    if form.validate_on_submit():
         new_lead = Lead(
-            firstname = request.form["firstname"],
-            lastname = request.form["lastname"],
-            email = request.form["email"],
-            phone = request.form["phone"],
-            message = request.form["message"]
+            firstname = form.firstname.data,
+            lastname = form.lastname.data,
+            email = form.email.data,
+            phone = form.phone.data,
+            message = form.message.data
         )
         db.session.add(new_lead)
         db.session.commit()
-
+        flash('Lead submitted successfully!', 'success')
+                
         return redirect(url_for("home"))
-    return render_template("contacto.html")
+    return render_template("contacto.html", form=form)
 
 
 @app.route("/blog")

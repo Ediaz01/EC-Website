@@ -418,11 +418,27 @@ ul {
   grid-column: 1fr;
 }
 
+.form-input-item input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border-style: hidden;
+  padding: 10px;
+}
+
 .message-box-item {
   grid-column: span 2;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.message-box-item textarea {
+  width: 100%;
+  height: 18rem;
+  border-radius: 10px;
+  border-style: hidden;
+  padding: 10px;
 }
 
 .btn-item {
@@ -432,18 +448,19 @@ ul {
   align-items: center;
 }
 
-.input-box {
-  height: 4rem;
+.btn-item input {
+  background: #97999b;
+  color: white;
+  font-size: 1.1rem;
+  width: 100%;
+  height: 2rem;
   border-radius: 10px;
   border-style: hidden;
-  width: 100%;
+  font-weight: 600;
 }
 
-.message-box {
-  height: 20rem;
-  width: 100%;
-  border-radius: 10px;
-  border-style: hidden;
+.btn-item input:hover {
+  background: #848689;
 }
 
 /* ACERCA DE */
@@ -816,8 +833,8 @@ ul {
 ::placeholder {
   color: grey;
   font-style: italic;
-  font-size: 1rem;
-  padding-left: 10px;
+  font-size: 0.9rem;
+  padding: 5px;
 }
 
 /* Buttons */
@@ -1419,6 +1436,10 @@ ul {
     grid-column: span 1;
   }
 
+  .btn-item input {
+    font-size: 1rem;
+  }
+
   /* ACERCA DE */
 
   /*Servicios 3 x 2, 6 items */
@@ -1678,6 +1699,8 @@ ul {
   .article-img img {
     max-height: 300px;
   }
+
+  /* CONTACT */
 
   /* FOOTER */
   .footer-flex ul {

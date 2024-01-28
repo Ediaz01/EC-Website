@@ -31,66 +31,14 @@
           method="POST"
           class="form-box"
         >
+          {{ form.hidden_tag() }}
           <div class="container-form">
-            <div class="form-input-item">
-              <input
-                class="input-box"
-                id="firstname"
-                name="firstname"
-                type="text"
-                placeholder="Nombre"
-                required
-              />
-            </div>
-            <div class="form-input-item">
-              <input
-                class="input-box"
-                id="lastname"
-                name="lastname"
-                type="text"
-                placeholder="Apellido"
-                required
-              />
-            </div>
-            <div class="form-input-item">
-              <input
-                class="input-box"
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-            <div class="form-input-item">
-              <input
-                class="input-box"
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Telefono"
-                required
-              />
-            </div>
-            <div class="message-box-item">
-              <!-- <label for="message" class="label-item">Message</label> -->
-              <textarea
-                class="message-box"
-                id="message"
-                name="message"
-                placeholder="Mensaje"
-                required
-              ></textarea>
-            </div>
-            <div class="btn-item">
-              <button
-                class="btn btn-primary-action"
-                id="submitButton"
-                type="submit"
-              >
-                Enviar
-              </button>
-            </div>
+            <div class="form-input-item">{{ form.firstname() }}<br /></div>
+            <div class="form-input-item">{{ form.lastname() }}<br /></div>
+            <div class="form-input-item">{{ form.email() }}<br /></div>
+            <div class="form-input-item">{{ form.phone() }}<br /></div>
+            <div class="message-box-item">{{ form.message() }}<br /></div>
+            <div class="btn-item">{{ form.submit() }}</div>
           </div>
         </form>
       </div>
