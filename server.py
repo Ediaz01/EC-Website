@@ -4,9 +4,30 @@ from flask_sqlalchemy import SQLAlchemy
 from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Length, Email
 import os
+from flask_mail import Mail, Message
+from dotenv import load_dotenv
 
 
+
+load_dotenv()
+
+
+# Initialize the Flask application
 app = Flask(__name__)
+
+
+# Configure Flask Mail 
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME') 
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD') 
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_SENDER_EMAIL')
+
+
+mail = Mail(app)
+
 
 
 ##SECRET KEY 
@@ -68,11 +89,27 @@ def contacto():
             phone = form.phone.data,
             message = form.message.data
         )
+
         db.session.add(new_lead)
         db.session.commit()
+
+         # Send email
+        msg = Message("New Lead Submitted",
+                      sender=os.getenv('MAIL_SENDER_EMAIL'),  # Replace with your email
+                      recipients=[os.getenv('MAIL_SENDER_EMAIL')])  # Replace with recipient email
+        msg.body = f"""
+        New lead details:
+        First Name: {new_lead.firstname}
+        Last Name: {new_lead.lastname}
+        Email: {new_lead.email}
+        Phone: {new_lead.phone}
+        Message: {new_lead.message}
+        """
+        mail.send(msg)
+
         flash('Lead submitted successfully!', 'success')
                 
-        return redirect(url_for("home"))
+        return redirect(url_for("contacto"))
     return render_template("contacto.html", form=form)
 
 
